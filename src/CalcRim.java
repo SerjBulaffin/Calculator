@@ -31,7 +31,7 @@ public class CalcRim {
         int number2 = rimToArab(digitRim2); //получаем второе число
         calcArab = new CalcArab(number1, number2, this.znak); //передаем аргументы в класс для расчета челочисленного значения
         result = calcArab.getResult(); //получаем результат
-        System.out.println(number1 + " " + this.znak + " " + number2 + " = " + result);
+        //System.out.println(number1 + " " + this.znak + " " + number2 + " = " + result);
         resultString = arabToRim(result); //преобразуем челочисленный результат в римские цифры
     }
 
