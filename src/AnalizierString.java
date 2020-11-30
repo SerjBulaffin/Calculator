@@ -50,7 +50,7 @@ public class AnalizierString {
         }
 
         if (argument1 && argument2) { //если первый и второй argument true, значит на входе два числа
-            if (digit1 < 1 || digit2 < 1) { //если первое и второе число меньше 1, исключение
+            if (digit1 < 1 || digit2 < 1 || digit1 > 10 || digit2 > 10) { //если первое и второе число меньше 1 или больше 10, исключение
                 throw new IllegalArgumentException();
             }
             calcArab = new CalcArab(digit1, digit2, znak); //вычисляем значение
