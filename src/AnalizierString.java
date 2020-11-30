@@ -24,7 +24,7 @@ public class AnalizierString {
         int digit2 = 0;
 
         this.arrInput = this.input.split(" "); //парсим входную строку на массив строк
-        if (arrInput.length > 3) { //если массив больше трех, исключение. (два аргумента и знак)
+        if (arrInput.length != 3) { //если массив больше или меньше трех, исключение. (два аргумента и знак)
             throw new IllegalArgumentException();
         } else if(!arrInput[1].equals("+") && !arrInput[1].equals("-") && //проверка на знак, если не совпадает +-*/,
                 !arrInput[1].equals("*") && !arrInput[1].equals("/")) { //выкидываем исключение
@@ -50,6 +50,9 @@ public class AnalizierString {
         }
 
         if (argument1 && argument2) { //если первый и второй argument true, значит на входе два числа
+            if (digit1 < 1 || digit2 < 1) { //если первое и второе число меньше 1, исключение
+                throw new IllegalArgumentException();
+            }
             calcArab = new CalcArab(digit1, digit2, znak); //вычисляем значение
             resultString = String.valueOf(calcArab.getResult()); //присваимваем результат выходной строке
         } else if (!argument1 && !argument2) { //если первый и второй argument false, значит на входе две строки
